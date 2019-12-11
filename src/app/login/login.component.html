@@ -1,0 +1,34 @@
+﻿<h2>Login</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+     <!-- <div class="form-group">
+        <label for="nome">nome</label>
+        <input type="text" formControlName="nome" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nome.errors }" />
+        
+    </div>
+    <div class="form-group">
+        <label for="email">email</label>
+        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+    </div>  -->
+    
+    <div class="form-group">
+        <label for="email">E-mail: </label>
+
+        <select formControlName="email">
+            <option value=""> Selecione o usuario ... </option>
+            <option *ngFor="let user of users" value= {{user.id}}>
+              {{user.email}}
+            </option>
+        </select>
+
+    </div> 
+
+     
+
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+        </button>
+        <a routerLink="/register" class="btn btn-link">Cadastrar</a>
+    </div>
+</form>

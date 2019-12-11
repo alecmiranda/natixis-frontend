@@ -1,0 +1,15 @@
+<div style="padding: 20px;" align="center" >
+  <h1 style="color: blue">{{title}}</h1>
+  <nav>
+    <a routerLink="produto" 
+    class="btn btn-dark btn-sm" role="button" routerLinkActive="active">Produtos</a>
+    <a routerLink="add" 
+    class="btn btn-dark btn-sm" role="button" routerLinkActive="active">Inserir</a>
+    <a routerLink="buscarPorId" 
+    class="btn btn-dark btn-sm" role="button" routerLinkActive="active">Buscar</a>
+    <a routerLink="login" 
+    class="btn btn-dark btn-sm" role="button" routerLinkActive="active">usuarios</a>
+  </nav>
+  <br>
+  <router-outlet></router-outlet>
+</div>

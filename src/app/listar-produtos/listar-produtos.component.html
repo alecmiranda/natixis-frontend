@@ -1,0 +1,11 @@
+<h1>Produtos</h1>
+ 
+<div *ngFor="let produto of produtos | async" style="width: 300px;">
+  <detalhes-produto [produto]='produto'></detalhes-produto>
+</div>
+
+ 
+<div>
+  <button type="button" class="button btn-danger" (click)='deletarProdutos()'>Deletar Todos</button>
+</div>
+

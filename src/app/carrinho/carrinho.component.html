@@ -1,0 +1,26 @@
+<h3>Carrinho</h3>
+<table class="table table-striped">
+    <tr>
+        <th>Remover</th>
+        <th>Id</th>
+        <th>nome</th>
+        <th>Valor</th>
+        <th>Quantidade</th>
+        <th>Sub Total</th>
+    </tr>
+    <tr *ngFor="let item of items">
+        <td align="center">
+            <a (click)="remove(item.produto.id)">X</a>
+        </td>
+        <td>{{item.produto.id}}</td>
+        <td>{{item.produto.nome}}</td>
+        
+        <td>{{item.produto.valor}}</td>
+        <td>{{item.quantidade}}</td>
+        <td>{{item.produto.valor * item.quantidade}}</td>
+    </tr>
+    <tr>
+        <td colspan="5" align="right">Total</td>
+        <td>{{total}}</td>
+    </tr>
+</table>

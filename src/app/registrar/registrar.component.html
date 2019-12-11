@@ -1,0 +1,27 @@
+﻿<h2>Register</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" formControlName="nome" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nome.errors }" />
+        
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" class="form-control" 
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+    
+    </div>
+    
+    <div *ngIf="registerForm.get('email').hasError('email')">
+        Não é um formato de email válido. 
+      </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Registrar
+        </button>
+        <a routerLink="/login" class="btn btn-link">Cancelar</a>
+    </div>
+    <div [hidden]="!erro">Ocorreu um erro</div>
+
+</form>

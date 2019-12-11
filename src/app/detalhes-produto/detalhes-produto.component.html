@@ -1,0 +1,18 @@
+<div *ngIf="produto">
+    <div>
+      <label>Id: </label> {{produto.id}}
+    </div>
+    <div>
+      <label>Nome: </label> {{produto.nome}}
+    </div>
+    <div>
+      <label>Valor: </label> {{produto.valor}}
+    </div>
+   
+   
+    <span class="button is-small btn-danger" (click)='deletarProduto()'>Delete</span>&nbsp;
+    <a [routerLink]="['/carrinho', { id:produto.id }]">Comprar</a>
+    
+
+    <hr/>
+  </div>
